@@ -31,7 +31,7 @@ namespace ParkingManager.Data.Repositories
 
                     if (result != 0)
                     {
-                        
+
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             reader.Read();
@@ -51,6 +51,27 @@ namespace ParkingManager.Data.Repositories
                 catch (Exception e)
                 {
                     return null;
+                }
+            }
+        }
+
+        public void ResetStatusForAllUser()
+        {
+            if (DateTime.Now.Day == 1)
+            {
+                using (SqlConnection connection = new SqlConnection(Config.ConnectionString))
+                {
+                    try
+                    {
+                        connection.Open();
+                        SqlCommand cmd = new SqlCommand("usp_reset_status_for_all_user", connection) { CommandType = CommandType.StoredProcedure };
+
+                        cmd.ExecuteNonQuery();
+
+                    }
+                    catch (Exception e)
+                    {
+                    }
                 }
             }
         }

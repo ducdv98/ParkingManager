@@ -309,11 +309,11 @@
             this.tbPhoneNum.Size = new System.Drawing.Size(244, 20);
             this.tbPhoneNum.TabIndex = 0;
             // 
-            // FrmRegister
+            // FrmSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(735, 393);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnGenTicketId);
@@ -325,8 +325,9 @@
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "FrmRegister";
+            this.Name = "FrmSignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng ký giữ xe tháng";
             this.groupBox3.ResumeLayout(false);

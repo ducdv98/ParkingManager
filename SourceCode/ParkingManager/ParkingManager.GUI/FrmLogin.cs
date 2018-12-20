@@ -6,16 +6,18 @@ namespace ParkingManager.GUI
 {
     public partial class FrmLogin : Form
     {
+
+        private LoginDao loginDao;
         public FrmLogin()
         {
             InitializeComponent();
+            loginDao = new LoginDao();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (validateInput())
             {
-                LoginDao loginDao = new LoginDao();
                 if (loginDao.Login(tbUsername.Text.Trim(), tbPassword.Text.Trim()) != null)
                 {
                     FrmMain main = new FrmMain();
@@ -44,6 +46,11 @@ namespace ParkingManager.GUI
         {
             if (e.KeyCode == Keys.Enter && !tbPassword.Text.Equals(""))
                 btnLogin_Click(null, null);
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            loginDao.ResetStatusForAllUser();
         }
     }
 }

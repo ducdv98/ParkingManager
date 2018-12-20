@@ -104,7 +104,7 @@ namespace ParkingManager.GUI.Parking
                     btnRefresh_Click(null, null);
                 else
                 {
-                    MessageBox.Show("Có lỗi xảy ra!", "Lỗi", MessageBoxButtons.OK,
+                    MessageBox.Show("Có lỗi xảy ra!\nKhu vực đã hết chỗ!", "Lỗi", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
             }
@@ -128,7 +128,7 @@ namespace ParkingManager.GUI.Parking
                     if (result == Constants.RESULT_OK)
                         btnRefresh_Click(null, null);
                     else
-                        MessageBox.Show("Có lỗi xảy ra!", "Lỗi", MessageBoxButtons.OK,
+                        MessageBox.Show("Có lỗi xảy ra!\nKhu vực đã hết chỗ!", "Lỗi", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 }
             }

@@ -216,6 +216,7 @@
             this.btnExtendTerm.TabIndex = 2;
             this.btnExtendTerm.Text = "Gia hạn";
             this.btnExtendTerm.UseVisualStyleBackColor = true;
+            this.btnExtendTerm.Visible = false;
             this.btnExtendTerm.Click += new System.EventHandler(this.btnExtendTerm_Click);
             // 
             // groupBox10
@@ -329,14 +330,14 @@
             this.tbTicketIdInput.TextChanged += new System.EventHandler(this.tbTicketIdInput_TextChanged);
             this.tbTicketIdInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTicketIdInput_KeyDown);
             // 
-            // PnlOut
+            // PnlGetOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 429);
             this.ControlBox = false;
             this.Controls.Add(this.pnIn);
-            this.Name = "PnlOut";
+            this.Name = "PnlGetOut";
             this.Text = "PnlOut";
             this.pnIn.ResumeLayout(false);
             this.panel6.ResumeLayout(false);

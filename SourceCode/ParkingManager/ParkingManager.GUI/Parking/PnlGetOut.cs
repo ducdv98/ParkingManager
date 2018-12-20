@@ -111,6 +111,9 @@ namespace ParkingManager.GUI.Parking
                 return;
             }
 
+            if (tbTicketIdInput.Text.Equals(""))
+                return;
+
             bool mode = (tbCustomerName.Text.Equals(""));
             if (mode)
             {

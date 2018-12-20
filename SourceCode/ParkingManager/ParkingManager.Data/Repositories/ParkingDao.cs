@@ -152,7 +152,7 @@ namespace ParkingManager.Data.Repositories
                         };
                     cmd.Parameters.Add(new SqlParameter("@ticketId", ticketId));
                     cmd.Parameters.Add(new SqlParameter("@mode", false));
-                    var returnParam = cmd.Parameters.Add("@count", SqlDbType.Int);
+                    var returnParam = cmd.Parameters.Add("@result", SqlDbType.Int);
                     returnParam.Direction = ParameterDirection.ReturnValue;
 
 
@@ -226,7 +226,7 @@ namespace ParkingManager.Data.Repositories
                                 LicensePlate = (reader["BKS"] == DBNull.Value) ? "" : (string)reader["BKS"],
                                 VehicleType = (int)reader["LoaiXe"],
                                 AreaID = (int)reader["KhuVuc"],
-                                Fee = new PriceDto() { ID = (int) reader["MaMP"], Price = (decimal) reader["MucPhi"]}
+                                Fee = new PriceDto() { ID = (int)reader["MaMP"], Price = (decimal)reader["MucPhi"] }
                             };
                             return customer;
                         }
@@ -282,9 +282,9 @@ namespace ParkingManager.Data.Repositories
                         };
                     cmd.Parameters.Add(new SqlParameter("@ticketId", ticketId));
 
-                    int result = cmd.ExecuteNonQuery();
+                    int rowEffected = cmd.ExecuteNonQuery();
 
-                    if (result != 0)
+                    if (rowEffected == 1)
                         return Constants.RESULT_OK;
 
                     return Constants.RESULT_ERROR;
@@ -384,10 +384,10 @@ namespace ParkingManager.Data.Repositories
                         };
                     cmd.Parameters.Add(new SqlParameter("@ticketId", ticketId));
                     cmd.Parameters.Add(new SqlParameter("@mode", mode));
-                    
+
                     int rowEffected = cmd.ExecuteNonQuery();
 
-                    if (rowEffected >= 2)
+                    if (rowEffected >= 2 && rowEffected <= 3)
                         return Constants.RESULT_OK;
                     return Constants.RESULT_ERROR;
 

@@ -71,7 +71,7 @@ namespace ParkingManager.Data.Repositories
                     cmd.Parameters.Add(new SqlParameter("@customerId", customerId));
 
                     int rowEffected = cmd.ExecuteNonQuery();
-                    if (rowEffected != 0)
+                    if (rowEffected >= 3 && rowEffected <= 4)
                         return Constants.RESULT_OK;
                     return Constants.RESULT_ERROR;
                 }
